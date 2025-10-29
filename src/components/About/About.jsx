@@ -7,7 +7,7 @@ import "./About.css";
 import img1 from "../../assets/team/rishika.jpeg";
 import img2 from "../../assets/team/ankit.jpg";
 import img3 from "../../assets/team/uttam.jpg";
-import img4 from "../../assets/team/Purushotam.png";
+import img4 from "../../assets/team/purushotam.png";
 import img5 from "../../assets/team/devashish.jpg";
 import img6 from "../../assets/team/principlw.jpg";
 
