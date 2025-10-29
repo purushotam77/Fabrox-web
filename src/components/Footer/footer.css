@@ -1,0 +1,9 @@
+.glow-text {
+  text-shadow: 0 0 6px rgba(0, 174, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.glow-text:hover {
+  text-shadow: 0 0 12px rgba(0, 174, 255, 1);
+  color: #0ea5e9;
+}

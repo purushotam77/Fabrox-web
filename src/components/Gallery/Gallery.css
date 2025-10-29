@@ -1,0 +1,25 @@
+
+.glow-text {
+  color: #fff;
+  text-shadow:
+    0 0 5px #00ffe1,
+    0 0 10px #00ffe1,
+    0 0 15px #00ffe1,
+    0 0 20px #00ffe1;
+}
+
+.dark .glow-text {
+  text-shadow:
+    0 0 5px #ff9800,
+    0 0 10px #ff9800,
+    0 0 15px #ff9800,
+    0 0 20px #ff9800;
+}
+
+.perspective {
+  perspective: 1500px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
