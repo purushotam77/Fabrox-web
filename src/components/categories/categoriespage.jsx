@@ -3,8 +3,10 @@ import { useParams } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ShoppingCart, IndianRupee } from "lucide-react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-// TSHIRT
+// ✅ TSHIRT
 import Product1 from "../../assets/products/t1.jpeg";
 import Product2 from "../../assets/products/t2.jpeg";
 import Product3 from "../../assets/products/t3.jpeg";
@@ -12,7 +14,7 @@ import Product4 from "../../assets/products/t4.jpeg";
 import Product5 from "../../assets/products/t5.jpeg";
 import Product6 from "../../assets/products/t6.jpeg";
 
-//SHIRT 
+// ✅ SHIRT
 import Product7 from "../../assets/products/s1.jpeg";
 import Product8 from "../../assets/products/s2.jpeg";
 import Product9 from "../../assets/products/s3.jpeg";
@@ -20,7 +22,7 @@ import Product10 from "../../assets/products/s4.jpeg";
 import Product11 from "../../assets/products/s5.jpeg";
 import Product12 from "../../assets/products/s6.jpeg";
 
-// HOODIE 
+// ✅ HOODIE
 import Product13 from "../../assets/products/h1.jpeg";
 import Product14 from "../../assets/products/h2.jpeg";
 import Product15 from "../../assets/products/h3.jpeg";
@@ -28,7 +30,7 @@ import Product16 from "../../assets/products/h4.jpeg";
 import Product17 from "../../assets/products/h5.jpeg";
 import Product18 from "../../assets/products/h6.jpeg";
 
-//SWEATSHIRT
+// ✅ SWEATSHIRT
 import Product19 from "../../assets/products/sw1.jpeg";
 import Product20 from "../../assets/products/sw2.jpeg";
 import Product21 from "../../assets/products/sw3.jpeg";
@@ -36,7 +38,7 @@ import Product22 from "../../assets/products/sw4.jpeg";
 import Product23 from "../../assets/products/sw5.jpeg";
 import Product24 from "../../assets/products/sw6.jpeg";
 
-//WOMEN
+// ✅ WOMEN
 import Product25 from "../../assets/products/w1.jpeg";
 import Product26 from "../../assets/products/w2.jpeg";
 import Product27 from "../../assets/products/w3.jpeg";
@@ -44,7 +46,7 @@ import Product28 from "../../assets/products/w4.jpeg";
 import Product29 from "../../assets/products/w5.jpeg";
 import Product30 from "../../assets/products/w6.jpg";
 
-//KIDS
+// ✅ KIDS
 import Product31 from "../../assets/products/k1.jpeg";
 import Product32 from "../../assets/products/k2.jpeg";
 import Product33 from "../../assets/products/k3.jpeg";
@@ -52,7 +54,7 @@ import Product34 from "../../assets/products/k4.jpeg";
 import Product35 from "../../assets/products/k5.jpeg";
 import Product36 from "../../assets/products/k6.jpeg";
 
-// ✅ Different product sets for each category (6 items each)
+// ✅ Product Data
 const allProducts = {
   tshirt: [
     { id: 1, name: "Classic Polo T-Shirt", img: Product1, price: "₹599", originalPrice: "₹1199" },
@@ -60,7 +62,7 @@ const allProducts = {
     { id: 3, name: "V-Neck T-Shirt", img: Product3, price: "₹899", originalPrice: "₹1299" },
     { id: 4, name: "Oversized T-Shirt", img: Product4, price: "₹999", originalPrice: "₹1399" },
     { id: 5, name: "Graphic T-Shirt", img: Product5, price: "₹799", originalPrice: "₹1199" },
-    { id: 6, name: "Plain Cotton T-Shirt", img: Product6, price: "399", originalPrice: "₹999" },
+    { id: 6, name: "Plain Cotton T-Shirt", img: Product6, price: "₹399", originalPrice: "₹999" },
   ],
   shirt: [
     { id: 1, name: "Formal Blue Shirt", img: Product7, price: "₹1299", originalPrice: "₹1499" },
@@ -104,7 +106,6 @@ const allProducts = {
   ],
 };
 
-// Shadow color classes
 const shadowColors = [
   "hover:shadow-pink-500",
   "hover:shadow-blue-500",
@@ -126,13 +127,23 @@ const CategoryPage = () => {
 
   const products = allProducts[slug] || [];
 
+  const handleAddToCart = (product) => {
+    toast.success("✅ Item added successfully!", {
+      position: "top-center",
+      autoClose: 2000,
+      theme: "colored",
+    });
+
+    const phoneNumber = "917352754125";
+    const message = `Hello! I want to order ${product.name} for ${product.price}.`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <section className="py-12 px-4 bg-white dark:bg-slate-900 dark:text-white text-gray-900">
       <div className="max-w-7xl mx-auto">
-        <h2
-          className="text-3xl sm:text-4xl font-bold mb-8 text-center"
-          data-aos="fade-down"
-        >
+        <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center" data-aos="fade-down">
           🧵 Category: {slug.charAt(0).toUpperCase() + slug.slice(1)}
         </h2>
 
@@ -174,8 +185,12 @@ const CategoryPage = () => {
                   >
                     <IndianRupee size={18} /> Buy Now
                   </a>
-                  <button className="border border-indigo-600 dark:border-indigo-300 text-indigo-600 dark:text-indigo-300 px-4 py-2 rounded-full hover:bg-indigo-600 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 transition duration-300">
-                    <ShoppingCart size={18} className="inline mr-1" />
+
+                  <button
+                    onClick={() => handleAddToCart(product)}
+                    className="border border-indigo-600 dark:border-indigo-300 text-indigo-600 dark:text-indigo-300 px-4 py-2 rounded-full hover:bg-indigo-600 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 transition duration-300 flex items-center justify-center gap-1"
+                  >
+                    <ShoppingCart size={18} />
                     Add to Cart
                   </button>
                 </div>
@@ -184,6 +199,7 @@ const CategoryPage = () => {
           </div>
         )}
       </div>
+      <ToastContainer />
     </section>
   );
 };

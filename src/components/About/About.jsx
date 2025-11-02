@@ -29,8 +29,8 @@ const team = [
   },
   {
     name: "Uttam Kumar",
-    role: "Executive Manager",
-    thought: "Drives market execution, logistics, and B2B collaborations.",
+    role: "Graphic Designer",
+    thought: "Bringing our brand to life through innovative and engaging graphic designs.",
     img: img3,
     glow: "hover:shadow-yellow-500/70"
   },

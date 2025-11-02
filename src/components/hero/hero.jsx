@@ -65,14 +65,20 @@ const Hero = ({ handleOrderPopup }) => {
                 </p>
                 <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                   <button
-                    onClick={handleOrderPopup}
+                    onClick={() => {
+                      const categorySection = document.querySelector("#category");
+                      if (categorySection) {
+                        categorySection.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
                     className="bg-gradient-to-r from-indigo-500 via-blue-500 to-purple-600
-                        hover:from-pink-500 hover:via-orange-400 hover:to-purple-700
-                        text-white font-semibold py-4 px-14 rounded-full shadow-2xl
-                        hover:shadow-[0_0_40px_rgba(199,21,133,0.6)] transition-all duration-500"
+              hover:from-pink-500 hover:via-orange-400 hover:to-purple-700
+              text-white font-semibold py-4 px-14 rounded-full shadow-2xl
+              hover:shadow-[0_0_40px_rgba(199,21,133,0.6)] transition-all duration-500"
                   >
                     Buy Now
                   </button>
+
                 </div>
                 <p className="mt-4 text-sm sm:text-base text-gray-500 dark:text-gray-400 flex items-center justify-center sm:justify-start gap-2">
                   🌿 Eco-friendly | 🇮🇳 Made in India

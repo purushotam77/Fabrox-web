@@ -1,6 +1,9 @@
 import React from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ShoppingCart } from "lucide-react";
 
 import Product1 from "../../assets/hero/img1.png";
 import Product2 from "../../assets/hero/img2.png";
@@ -25,6 +28,21 @@ const products = [
 ];
 
 const Products = () => {
+  const handleAddToCart = (product) => {
+    // ✅ Toast notification
+    toast.success("✅ Item added successfully!", {
+      position: "top-center",
+      autoClose: 2000,
+      theme: "colored",
+    });
+
+    // ✅ WhatsApp open
+    const phoneNumber = "917352754125"; // Without +
+    const message = `Hello! I want to order ${product.name} for ${product.price}.`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <section
       id="products"
@@ -75,7 +93,13 @@ const Products = () => {
                 >
                   Buy Now
                 </a>
-                <button className="text-center border border-indigo-600 dark:border-indigo-300 text-indigo-600 dark:text-indigo-300 px-4 py-2 rounded-full hover:bg-indigo-600 hover:text-white transition duration-300 font-semibold">
+
+                {/* ✅ Updated Add to Cart */}
+                <button
+                  onClick={() => handleAddToCart(product)}
+                  className="text-center border border-indigo-600 dark:border-indigo-300 text-indigo-600 dark:text-indigo-300 px-4 py-2 rounded-full hover:bg-indigo-600 hover:text-white transition duration-300 font-semibold flex items-center justify-center gap-1"
+                >
+                  <ShoppingCart size={18} />
                   Add to Cart
                 </button>
               </div>
@@ -83,6 +107,9 @@ const Products = () => {
           ))}
         </div>
       </div>
+
+      {/* Toast container for popup */}
+      <ToastContainer />
     </section>
   );
 };

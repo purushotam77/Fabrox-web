@@ -20,7 +20,7 @@ const Categories = () => {
   }, []);
 
   return (
-    <section className="py-16 px-4 bg-white dark:bg-slate-900 text-gray-900 dark:text-white transition-colors duration-500">
+    <section id="category"  className="py-16 px-4 bg-white dark:bg-slate-900 text-gray-900 dark:text-white transition-colors duration-500">
       <div className="max-w-6xl mx-auto">
         <h2
           className="text-4xl font-bold text-center mb-10 drop-shadow-md"
