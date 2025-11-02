@@ -101,14 +101,24 @@ const Contact = () => {
               loading="lazy"
             ></iframe>
 
-            <div className="mt-6 text-center">
-              <p className="mb-2 font-semibold">📲 Scan to Connect</p>
+            <div
+              className="mt-6 text-center"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <p className="mb-2 font-semibold text-slate-700 dark:text-slate-200 transition-colors duration-300 hover:text-purple-500">
+                📲 Scan to Connect
+              </p>
               <img
-                src={QR}
+                src={QR} // QR CODE ";
                 alt="QR Code"
-                className="w-32 h-32 mx-auto rounded-lg shadow-md border border-slate-300 p-1 bg-white"
+                className="w-32 sm:w-36 md:w-40 h-auto mx-auto rounded-xl shadow-lg bg-transparent
+               transition-all duration-500 ease-in-out
+               hover:scale-105 hover:shadow-[0_0_25px_#c084fc]
+               dark:hover:shadow-[0_0_25px_#a78bfa]"
               />
             </div>
+
           </div>
 
           {/* Right Side - Form */}
