@@ -6,6 +6,9 @@ import "aos/dist/aos.css";
 import Avatar1 from "../../assets/ourcustimers/img1.jpg";
 import Avatar2 from "../../assets/ourcustimers/img2.jpg";
 import Avatar3 from "../../assets/ourcustimers/img3.jpg";
+import Avatar4 from "../../assets/ourcustimers/img4.jpg";
+import Avatar5 from "../../assets/ourcustimers/img5.jpg";
+import Avatar6 from "../../assets/ourcustimers/img6.jpg";
 
 const customers = [
   {
@@ -31,6 +34,30 @@ const customers = [
     rating: 5,
     location: "Startup Coordinator, NCE Chandi ,Bihar",
     avatar: Avatar3,
+  },
+  {
+    name: "Aryan Raj" 
+,
+    review: "Excellent quality and timely delivery — FABROX made our VISION'25 Techfest T-shirts look amazing!.",
+    rating: 5,
+    location: "Technical Club, GEC Vaishali",
+    avatar: Avatar4,
+  },
+  {
+    name: "Ranjan Kumar" 
+,
+    review: "From design to delivery, everything was seamless. The fabric quality is excellent, colors didn't fade even after multiple washes. FABROX truly delivers premium quality every time!.",
+    rating: 5,
+    location: "IIT PATNA .",
+    avatar: Avatar5,
+  },
+  {
+    name: "Sameer Kumar" 
+,
+    review: "Our entire team loved the FABROX merchandise! The attention to detail, smooth texture, and vibrant colors made our outfits stand out. Excellent service and quality!.",
+    rating: 5,
+    location: "KHETI GROW ,AGRITECH STARTUP",
+    avatar: Avatar6,
   },
 ];
 

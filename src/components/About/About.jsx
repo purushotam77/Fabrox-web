@@ -28,7 +28,7 @@ const team = [
     glow: "hover:shadow-blue-500/70"
   },
   {
-    name: "Uttam Kumar",
+    name: "Uttam Bharti",
     role: "Graphic Designer",
     thought: "Bringing our brand to life through innovative and engaging graphic designs.",
     img: img3,
